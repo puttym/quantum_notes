@@ -1,0 +1,179 @@
+\section{The rotation operator}\sidenote{\texttt{rotation\textunderscore operator.tex}}
+We  can represent $\ket{+z}$ as a vector in a Cartesian coordinate
+system. If we rotate this vector anticlockwise by 90\degree, we get
+$\ket{+x}$. Mathematically, this can be written as,
+
+\begin{equation}
+\ket{+x} = \hat R \left(\frac{\pi}{2} \mathbf{j} \right) \ket{+z},
+\label{eq: rotation_ket}
+\end{equation}
+
+where $\hat R$ is called the \emph{rotation operator}. The terms inside the
+brackets indicate that the ket is rotated by an angle 90\degree about the $y-$
+axis \sidenote{Try to be aware of this: we are using the Cartisian coordinate
+system to represent the spin vectors visually. These spin vectors live in a
+complex vector space, and are different from the vectors we use to represent
+classical angular momentum. The Cartesian coordinate system, vector, and the
+complex vector space are just some of the tools we have developed to reconstruct
+the physical world in our minds. They do \emph{not} exist in nature, but they
+are the building blocks of our mental models of the world. We conduct
+experiments to check if these mental models are indeed in tune with the real
+world out there. This activity of building mental models and checking if they
+correctly mimic the reality is called \emph{science}.}. The same rotation operator
+rotates $\ket{-z}$ into $\ket{-x}$, $\ket{-y}$ into $\ket{-x}$, and so on.
+
+Let's now see the effect of this rotation operator on the most general spin-$1/2$
+state given by \cref{eq: general_state}.
+
+\begin{equation}
+	\hat R \left(\frac{\pi}{2} \mathbf{j} \right) \ket{\psi} = 
+	c_{+} \hat R \left(\frac{\pi}{2} \mathbf{j} \right) \ket{+z}
+       + c_{-} \hat R \left(\frac{\pi}{2} \mathbf{j} \right) \ket{-z}
+	\label{eq: rotation_generalstate}
+\end{equation}
+
+Using \cref{eq: rotation_ket} in \cref{eq: rotation_generalstate}, we get,
+
+\begin{equation}
+\hat R \left(\frac{\pi}{2} \mathbf{j} \right) \ket{\psi} = 
+	c_{+} \ket{+x} + c_{-} \ket{-x}.
+\end{equation}
+
+Yes, the rotation operator has changed the basis in which the state $\ket{\psi}$
+was desribed!
+
+\subsection{The adjoint operator}
+In the previous section section, we discussed the effect of a rotation operator
+on a ket vector. What if we are dealing with bra vectors, instead of kets? In 
+other words, what is the bra equation corresponding to \cref{eq: rotation_ket}?
+Is it $\bra{+x} = \bra{+z} \hat R \left(\frac{\pi}{2} \mathbf{j} \right)$? Let's
+check.
+
+We know that the amplitude for a state to be in itself is 1. Mathematically, this
+is written as,
+
+\begin{equation}
+\langle +x | +x \rangle = 1 \nonumber
+\end{equation}
+
+Assuming that $\bra{+x} = \bra{+z} \hat R \left(\frac{\pi}{2} \mathbf{j} \right)$ is
+correct, we can write,
+
+\begin{equation}
+\bra{+z} \hat R \left(\frac{\pi}{2} \mathbf{j} \right) 
+\hat R \left(\frac{\pi}{2} \mathbf{j} \right)\ket{+z} = 1
+\end{equation}
+
+We have, $\hat R \left(\frac{\pi}{2} \mathbf{j} \right) \hat R \left(\frac{\pi}{2} \mathbf{j} \right) = \ket{-z}$.
+This leads to,
+
+\begin{equation}
+\langle +z | -z \rangle = 1
+\end{equation}
+
+This is an absurd result because, the LHS is equal to zero. Therefore, our assumption that
+$\bra{+x} = \bra{+z} \hat R \left(\frac{\pi}{2} \mathbf{j} \right)$ is incorrect. Then, what
+is the bra equation corresponding to \cref{eq: rotation_ket}?
+
+Let's now introduce a new operator $\hat R^{\dag}$, called the \emph{adjoint} of $\hat R$.
+Now the bra equation becomes,
+
+\begin{equation}
+	\bra{+x} = \bra{+z} \hat R^{\dag} \left(\frac{\pi}{2} \mathbf{j} \right) 
+\end{equation}
+
+Normalisation condition is now satisfied:
+
+\begin{equation*}
+\begin{aligned}
+\langle+x \mid+x\rangle &=\left\langle+z\left|\hat{R}^{\dagger}\left(\frac{\pi}{2} \mathbf{j}\right) \hat{R}\left(\frac{\pi}{2} \mathbf{j}\right)\right|+z\right\rangle \\
+%
+&=\left\langle+z\left|\hat{R}^{\dagger}\left(\frac{\pi}{2} \mathbf{j}\right)\right|+x \right \rangle \\
+&=\langle+z \mid+z\rangle \\
+&=1
+\end{aligned}
+\end{equation*}
+
+Therefore, in order for the ket to satisfy normalisation condition even after
+rotation, it is necessary to introduce a new operator whose effect is to
+negate the action of the rotation operator. Mathematically, the new operator
+is represented by the adjoint of the rotation operator. 
+Naturally, successive action of
+rotation operator and its adjoint will leave the ket unchanged. It is useful
+to interpret this to be equivalent to the action of a new type of operator
+called \emph{identity operator}. Mathematically, this can be written as,
+
+\begin{equation}
+	{R} \hat{R}^{\dagger} =\hat{I}
+\end{equation}
+
+In summary, a rotation operator $\hat{R}\left(\theta \mathbf{n}\right)$ changes
+a ket by rotating it by an angle $\theta$ around the axis specified by the unit
+vector $\mathbf{n}$.
+
+\subsection{The generator of rotations}
+The rotation of a vector by an infinitesimally small angle $d\phi$ about the $z-$ axis
+can be presented by the operator:
+\begin{equation}
+\hat{R}(d\phi \mathbf{k}) =\hat{I}-\frac{i}{\hbar} \hat{J}_{z} d \phi
+\end{equation}
+
+Here, $\hat{J}_{z}$ is called the \emph{generator of rotations}. We can rotate a 
+vector by a finite angle $\phi$ by repeatedly carrying out inifinitesimally
+small rotations of magnitude $d\, \phi$. \sidenote{In Eq 14, since the LHS has the dimensions 
+of angle, the RHS should also have the same
+dimensions. That means, the dimensions of $\hbar$ and $\hat J_{z}$ should
+cancel. Since, $\hbar$ has the dimensions of angular momentum, $\hat J_{z}$
+should also have the dimensions of angular momentum (otherwise they can't
+cancel each other).}
+
+The adjoint of the above rotation operator is obtained by: 
+\begin{enumerate}
+	\item Replacing the complex numbers by their respective conjugates
+	\item Replacing the generator of rotations operator by its adjoint
+\end{enumerate}
+
+Therefore,
+\begin{equation}
+\hat {R}^{\dagger}(d \phi \mathbf{ k)}=\hat{I}+\frac{i}{\hbar} \hat{J}_{z}^{\dagger} d \phi
+\end{equation}
+
+Since, $\hat{R} \hat{R}^{\dagger} =\hat{I}$, we have,
+
+\begin{equation*}
+\begin{aligned}
+\left(\hat{I}-\frac{i}{\hbar} \hat{J}_{z} d \phi\right)\left(\hat{I}+\frac{i}{\hbar} \hat{J}_{z}^{\dagger} d \phi\right)=\hat{I}\\
+%
+\hat{I}+\frac{i}{\hbar} \hat{J}_{z}^{\dagger} d \phi-\frac{i}{\hbar} \hat{J}_{z} d \phi+\frac{1}{\hbar^{2}} \hat{J}_{z} \hat{J}_{z}^{\dagger}(d \phi)^{2}= \hat{I}\\
+\end{aligned}
+\end{equation*}
+
+Since the angle $d\phi$ is infinitesimally small, the last term on the LHS 
+can be neglected. This leads to,
+\begin{equation}
+\hat{I}+\frac{i}{\hbar}\left(\hat{J}_{z}^{\dagger}-\hat{J}_{z}\right) d \phi=\hat{I},
+\end{equation}
+
+which can be true only if $\hat{J}_{z}^{\dagger}=\hat{J}_{z}$. Operators that are
+equal to their own adjoints are said to be \emph{self-adjoint} or \emph{Hermitian}.
+\sidenote{The generaot of rotations is a Hermitian operator, but the rotation operator is not.}
+
+There is one more way to discover that $\hat J_{z}$ is Hermitian. If we rotate 
+the ket in clockwise direction, the rotation operator becomes:
+
+\begin{equation}
+\begin{aligned}
+\hat{R}(- \phi \mathbf{k}) & = \hat{I}-\frac{i}{\hbar} \hat{J}_{z} (- d \phi) \\
+	& = \hat{I}+\frac{i}{\hbar} \hat{J}_{z} d \phi
+\end{aligned}
+\end{equation}
+
+By the definition of adjoint of rotation operator, we have,
+\begin{equation}
+\begin{aligned}
+\hat{R}(- d \phi \mathbf{k}) &= \hat{R}^{\dagger}(d \phi \mathbf{k}) \\
+	\hat{I}-\frac{i}{\hbar} \hat{J}_{z} (- d \phi) &= \hat{I}+\frac{i}{\hbar} \hat{J}_{z}^{\dagger} d \phi
+\end{aligned}
+\end{equation}
+
+This can be true only if $\hat{J}_{z} = \hat{J}_{z}^{\dagger}$.

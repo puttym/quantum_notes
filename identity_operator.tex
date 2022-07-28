@@ -1,0 +1,39 @@
+\section{Identity operators}
+\sidenote{identity\textunderscore operator.tex}
+The general state $\ket{\psi}$ of a spin-$\frac{1}{2}$ particle is:
+\begin{equation*}
+\ket{\psi} =c_{+} \ket{+z} + c_{-}\ket{-z}
+\end{equation*}
+Multiplying by by $\ket{+z}$, we get,
+\begin{equation*}
+\braket{+z | \psi} = c_{+} \braket{+z | +z} 
+\end{equation*}
+or,
+\begin{equation*}
+c_{+} = \braket{+z | \psi}
+\end{equation*}
+
+Similarly, by multiplying by by $\ket{-z}$, we get,
+\begin{equation*}
+c_{-} = \braket{-z | \psi}
+\end{equation*}
+
+Now, $\ket{\psi}$ can be written as,
+\begin{align*}
+\ket{\psi} &= \braket{+z | \psi} \ket{+z} + \braket{-z | \psi} \ket{-z}  \\
+%
+&= \ket{+z} \braket{+z | \psi} + \ket{-z} \braket{-z | \psi} \\
+%
+&= \ket{+z} \bra{+z} \ket{\psi} + \ket{+z} \bra{-z} \ket{\psi}
+\end{align*}
+
+Or,
+\begin{equation*}
+\boxed{
+\ket{\psi} = \left[ \ket{+z} \bra{+z} + \ket{-z} \bra{-z} \right]\, \ket{\psi}
+}
+\end{equation*}
+
+On the right hand side, the term in the square bracket can be considered as an 
+operator that acts on the state $\ket{\psi}$, but doesn't change it at all. It is 
+example of an \emph{identity operator}.
